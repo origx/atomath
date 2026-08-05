@@ -1,13 +1,3 @@
-<div align="center">
-<img src="./src/l0.gif" width="150"/>
-</div>
+a lightweight math lib
 
-<div align="center">
-    <strong>Atomath</strong>
-</div>
-
-<br/>
-
-A personal lighting math lib.
-
-It’s still developing.
+🚧 It’s still developing.
