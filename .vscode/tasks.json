@@ -9,6 +9,8 @@
                 "-g",
                 "main.c",
                 "src/vec.c",
+                "src/mat.c",
+                "src/utils.c",
                 "-Iinclude",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
