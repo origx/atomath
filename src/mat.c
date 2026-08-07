@@ -1,5 +1,5 @@
 #include "mat.h"
-#include "math.h"
+#include <math.h>
 #include "types.h"
 #include "utils.h"
 
@@ -40,6 +40,9 @@ mat4 mat4_scale(float sx, float sy, float sz)
 
 mat4 mat4_scale_inverse(float sx, float sy, float sz)
 {
+    ASSERT(sx != 0, "scale_inverse: sx is zero");
+    ASSERT(sy != 0, "scale_inverse: sy is zero");
+    ASSERT(sz != 0, "scale_inverse: sz is zero");
     return (mat4){{
         {1/sx, 0, 0, 0}, {0, 1/sy, 0, 0}, {0, 0, 1/sz, 0}, {0, 0, 0, 1}
     }};
@@ -123,7 +126,7 @@ void mat4_transpose(const mat4* src, mat4* dst)
      m30, m31, m32, m33]          w]         m30x + m31y + m32z + m33w]
 
 */
-vec4 mat4_mul_vec4(mat4* m, vec4 v)
+vec4 mat4_mul_vec4(const mat4* m, vec4 v)
 {
     vec4 x_mul = {0};
     float k[4] = {v.x, v.y, v.z, v.w};

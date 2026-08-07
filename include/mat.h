@@ -29,7 +29,7 @@ mat4 mat4_rotation_y_deg(float deg);
 mat4 mat4_rotation_z_deg(float deg);
 
 
-vec4 mat4_mul_vec4(mat4* m, vec4 v);
+vec4 mat4_mul_vec4(const mat4* m, vec4 v);
 
 
 void mat4_mul(const mat4* a, const mat4* b, mat4* x);

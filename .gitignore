@@ -1,4 +1,5 @@
 *.log
 *.exe
+main.exe
 /.claude
 /.vscode

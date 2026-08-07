@@ -1,5 +1,6 @@
 #include "vec.h"
-#include "math.h"
+#include <math.h>
+#include "utils.h"
 
 // +
 vec2 vec2_add(vec2 a, vec2 b)
@@ -82,17 +83,20 @@ float vec4_norm(vec4 v)
 vec2 vec2_normalize(vec2 v)
 {
     float n = vec2_norm(v);
-    return n < 1e-8f ? v : (vec2){v.x/n, v.y/n};
+    ASSERT(n > 1e-8f, "vec2_normalize: zero vector");
+    return (vec2){v.x/n, v.y/n};
 }
 
 vec3 vec3_normalize(vec3 v)
 {
     float n = vec3_norm(v);
-    return n < 1e-8f ? v : (vec3){v.x/n, v.y/n, v.z/n};
+    ASSERT(n > 1e-8f, "vec3_normalize: zero vector");
+    return (vec3){v.x/n, v.y/n, v.z/n};
 }
 
 vec4 vec4_normalize(vec4 v)
 {
     float n = vec4_norm(v);
-    return n < 1e-8f ? v : (vec4){v.x/n, v.y/n, v.z/n, v.w/n};
+    ASSERT(n > 1e-8f, "vec4_normalize: zero vector");
+    return (vec4){v.x/n, v.y/n, v.z/n, v.w/n};
 }

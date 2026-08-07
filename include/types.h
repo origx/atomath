@@ -4,11 +4,11 @@
 /*
     angel setting
 */
-#define ANGEL_UNIT_RAD 0
-#define ANGEL_UNIT_DEG 1
+#define ANGLE_UNIT_RAD 0
+#define ANGLE_UNIT_DEG 1
 
-#ifndef ANGEL_UNIT
-#define ANGEL_UNIT ANGEL_UNIT_DEG
+#ifndef ANGLE_UNIT
+#define ANGLE_UNIT ANGLE_UNIT_DEG
 #endif
 
 #endif
