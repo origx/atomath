@@ -7,17 +7,21 @@
 
 int main(void)
 {
-    mat4 trans = mat4_translation(1, 2, 3);
-    mat4 rot = mat4_rotation_z_deg(90);
-    mat4 scale = mat4_scale_inverse(2, 0, 2);
+    vec3 v = {1, 2, 2};
+    float n = vec3_norm(v);           // 3.0
+    printf("\nn: %f\n", n);
+    vec3 u = vec3_normalize(v);      // (0.33, 0.67, 0.67)
+    printf("\nvec3 u:\n");
+    vec3_print(u);
 
-    mat4 temp, combined;
-    mat4_mul(&rot, &trans, &temp);      // temp = rot * trans
-    mat4_mul(&temp, &scale, &combined); // combined = rot * trans * scale
-
-    vec4 v = {0, 0, 0, 1};
-    vec4 result = mat4_mul_vec4(&combined, v);
-    vec4_print(result);
+    mat4 m = mat4_translation(1, 2, 3);
+    printf("\nmat4 m:\n");
+    mat4_print(m);
+    vec4 p = {0, 0, 0, 1};
+    vec4 q = mat4_mul_vec4(&m, p);    // (1, 2, 3, 1)
+    printf("\nvec4 q:\n");
+    vec4_print(q);
+    printf("\n\n");
 
 
     return 0;
